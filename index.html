@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Barbier - Portfolio</title>
+  
+  <head>
+    <!-- CDN pour Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+  
+    <!-- CDN pour Framer Motion (Animation) -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.12.4/dist/framer-motion.umd.js"></script>
+  </head>
+  
+
+  <style>
+    /* Personnalisation des animations */
+    .motion-element {
+      animation-duration: 0.5s;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Navbar -->
+<nav class="fixed w-full z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="text-2xl font-bold text-purple-400 motion-element" style="animation: fadeInUp 0.5s ease-out;">
+          Eric Barbier
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <!-- Liens de navigation -->
+          <a href="#accueil" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Accueil</a>
+          <a href="#à-propos" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">À propos</a>
+          <a href="#compétences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Compétences</a>
+          <a href="#expériences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Expériences</a>
+          <a href="#diplômes" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Diplômes</a>
+          <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Menu mobile -->
+<div id="mobile-menu" class="md:hidden bg-black bg-opacity-50 backdrop-blur-lg hidden">
+  <div class="px-6 py-4 space-y-4">
+    <a href="#accueil" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Accueil</a>
+    <a href="#à-propos" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">À propos</a>
+    <a href="#compétences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Compétences</a>
+    <a href="#expériences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Expériences</a>
+    <a href="#diplômes" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Diplômes</a>
+    <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+  </div>
+</div>
+
+
+<!-- Script pour le menu mobile -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+  <!-- Hero Section -->
+  <section id="accueil" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-black opacity-75"></div>
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-2 motion-element" style="animation: fadeInUp 0.5s ease-out;">
+          Eric Barbier
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 motion-element" style="animation: fadeInUp 0.5s ease-out 0.2s;">
+          Étudiant passionné en cybersécurité et réseaux
+        </p>
+        <div class="motion-element" style="animation: scaleIn 0.5s ease-out 0.4s;">
+          <a href="#contact" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition duration-300 inline-block">
+            Me contacter
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent"></div>
+  </section>
+
+<!-- About Section -->
+<section id="à-propos" class="py-20 bg-gray-800 text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-200">À propos de moi</h2>
+    <div class="max-w-3xl mx-auto">
+      <p class="mb-6 text-gray-300 leading-relaxed">
+        Étudiant en cybersécurité et réseaux, j'ai un fort intérêt pour l'informatique dans son ensemble. Je suis motivé par les défis techniques et cherche à améliorer mes compétences à travers des projets pratiques.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section Compétences -->
+<section id="compétences" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-200">Mes compétences</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Compétence Systèmes -->
+      <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-4 text-white">Systèmes</h3>
+        <ul class="space-y-2 text-gray-200">
+          <li>Virtualisation</li>
+          <li>Maintenance</li>
+          <li>Réparation</li>
+        </ul>
+      </div>
+      <!-- Compétence Réseaux -->
+      <div class="bg-gradient-to-r from-green-500 to-teal-600 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-4 text-white">Réseaux</h3>
+        <ul class="space-y-2 text-gray-200">
+          <li>Configuration de réseaux</li>
+          <li>Sécurisation des infrastructures</li>
+          <li>Protocoles réseau</li>
+        </ul>
+      </div>
+      <!-- Compétence Cybersécurité -->
+      <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-4 text-white">Cybersécurité</h3>
+        <ul class="space-y-2 text-gray-200">
+          <li>Firewalls</li>
+          <li>Antivirus</li>
+          <li>Sécurité des données</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Compétences Interpersonnelles -->
+<section id="compétences-interpersonnelles" class="py-20 bg-black">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-200">Compétences interpersonnelles</h2>
+    <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg">
+      <ul class="space-y-6 text-gray-300">
+        <li class="flex items-center space-x-4 hover:bg-gray-800 p-4 rounded-lg transition-all duration-300 cursor-pointer" onclick="togglePopup('popup1')">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l7-7-7-7"></path>
+          </svg>
+          <span>Faire preuve de rigueur et de précision</span>
+        </li>
+        <div id="popup1" class="popup-content text-gray-300 bg-gray-800 p-4 rounded-lg shadow-lg hidden">
+          <p>La rigueur et la précision sont essentielles pour garantir un travail de qualité et éviter des erreurs.</p>
+        </div>
+
+        <li class="flex items-center space-x-4 hover:bg-gray-800 p-4 rounded-lg transition-all duration-300 cursor-pointer" onclick="togglePopup('popup2')">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l7-7-7-7"></path>
+          </svg>
+          <span>Capacité d’adaptation</span>
+        </li>
+        <div id="popup2" class="popup-content text-gray-300 bg-gray-800 p-4 rounded-lg shadow-lg hidden">
+          <p>Être adaptable permet de faire face aux changements et de répondre rapidement aux défis professionnels.</p>
+        </div>
+
+        <li class="flex items-center space-x-4 hover:bg-gray-800 p-4 rounded-lg transition-all duration-300 cursor-pointer" onclick="togglePopup('popup3')">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l7-7-7-7"></path>
+          </svg>
+          <span>Persévérance</span>
+        </li>
+        <div id="popup3" class="popup-content text-gray-300 bg-gray-800 p-4 rounded-lg shadow-lg hidden">
+          <p>La persévérance est clé pour surmonter les obstacles et atteindre des objectifs à long terme.</p>
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Fonction pour afficher/masquer le popup
+  function togglePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    popup.classList.toggle('hidden');
+    popup.classList.toggle('block');
+  }
+</script>
+
+<style>
+  .popup-content {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  .popup-content.block {
+    opacity: 1;
+  }
+</style>
+
+<!-- EXPERIENCE PRO-->
+<section id="expériences" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-200">Mes expériences professionnelles</h2>
+    <div class="space-y-10">
+      <!-- Première expérience -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Stage Technicien Informatique - Ellipse Informatique</h3>
+        <p class="text-gray-300 mb-4">De mars 2024 à avril 2024 - Miribel</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Réparation d'ordinateurs en résolvant des problèmes matériels et logiciels.</li>
+          <li>Diagnostic précis et résolution des pannes informatiques.</li>
+          <li>Installation et configuration d'équipements informatiques.</li>
+        </ul>
+      </div>
+
+      <!-- Deuxième expérience -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Stage Technicien Informatique - Datared Informatique</h3>
+        <p class="text-gray-300 mb-4">De février 2023 à mars 2023 - Lyon</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Réparation d'ordinateurs en résolvant des problèmes matériels et logiciels.</li>
+          <li>Accueil et assistance aux clients en expliquant les réparations nécessaires.</li>
+          <li>Gestion des demandes de service, de la facturation et du suivi des réparations.</li>
+        </ul>
+      </div>
+
+      <!-- Troisième expérience -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Stage Administrateur Réseau - Diffazur</h3>
+        <p class="text-gray-300 mb-4">Décembre 2019 - Siège social, Nice</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Maintenance du réseau informatique de l'entreprise, garantissant une connectivité optimale.</li>
+          <li>Résolution rapide des problèmes liés au réseau et aux ordinateurs.</li>
+          <li>Dépannage des ordinateurs en panne au sein de l'entreprise.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diplomes -->
+<section id="diplômes" class="py-20 bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-200">Mes diplômes</h2>
+    <div class="space-y-10">
+      <!-- Premier diplôme -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Certificat de Spécialisation - Cybersécurité</h3>
+        <p class="text-gray-300">Depuis septembre 2024 - Lycée La Cotière, La Boisse</p>
+      </div>
+
+      <!-- Deuxième diplôme -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Bac Pro Systèmes Numériques</h3>
+        <p class="text-gray-300">2022 - 2024 - Lycée Jacques de Flesselles, Lyon</p>
+        <p class="text-gray-300">Mention Bien</p>
+      </div>
+
+      <!-- Troisième diplôme -->
+      <div class="p-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Diplôme National du Brevet</h3>
+        <p class="text-gray-300">2019 - Collège Arausio, Orange</p>
+        <p class="text-gray-300">Mention Assez Bien</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section Contact -->
+<section id="contact" class="py-20 bg-black">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-200 mb-8">Contactez-moi</h2>
+    <div class="max-w-lg mx-auto bg-gradient-to-br from-gray-800 via-gray-900 to-black p-8 rounded-lg shadow-xl border-2 border-indigo-600">
+      <p class="text-gray-300 text-lg mb-6 text-center">N'hésitez pas à me contacter par email ou téléphone pour toute question ou opportunité professionnelle.</p>
+      <div class="flex flex-col items-center space-y-6">
+        <!-- Email -->
+        <p class="text-xl text-gray-200">
+          <strong>Email :</strong>
+          <a href="mailto:eric.barb1108@gmail.com" class="text-indigo-400 hover:text-indigo-600 transition-all duration-300 hover:underline">
+            eric.barb1108@gmail.com
+          </a>
+        </p>
+        <!-- Téléphone -->
+        <p class="text-xl text-gray-200">
+          <strong>Téléphone :</strong>
+          <a href="tel:+33783403805" class="text-indigo-400 hover:text-indigo-600 transition-all duration-300 hover:underline">
+            07 83 40 38 05
+          </a>
+        </p>
+
+        <p class="text-lg text-gray-300 mt-6">Mais aussi, retrouvez-moi sur :</p>
+
+        <!-- Icône LinkedIn -->
+        <div class="flex justify-center">
+          <a href="https://www.linkedin.com/in/ericbarbier1108" target="_blank" class="transition-all duration-300 transform hover:scale-110 hover:text-indigo-600">
+            <i class="fab fa-linkedin text-5xl text-indigo-400 hover:text-indigo-600"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Intégration de Font Awesome pour les icônes -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+<!-- Footer -->
+<footer class="bg-gray-800 py-6">
+  <div class="container mx-auto px-6 flex justify-center items-center text-white">
+    <p>&copy; 2024 Eric Barbier. Tous droits réservés.</p>
+  </div>
+</footer>
+
+
+
+
+  <!-- Animation Scripts -->
+  <script>
+    const fadeInUp = "fadeInUp 0.5s ease-out";
+    document.querySelectorAll(".motion-element").forEach((el) => {
+      el.style.animation = fadeInUp;
+    });
+  </script>
+</body>
+</html>
